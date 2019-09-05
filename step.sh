@@ -15,9 +15,9 @@ elif [ $all_tags = 1 ]; then
     # We have first tag, fetch since first commit (ie. don't specify previous tag)
     
     if [ -n "${markdown_output}" -a "${markdown_output}" == "true" ]; then
-        changelog="$(git log --pretty=format:" - %s (%cd) _<%ce>_") --date=format:"%Y-%m-%d %H:%M:%S""
+        changelog="$(git log --pretty=format:" - %s (%cd) _<%ae>_") --date=format:"%Y-%m-%d %H:%M:%S""
     else
-        changelog="$(git log --pretty=format:" - %s (%cd) _<%ce>_") --date=format:"%Y-%m-%d %H:%M:%S""
+        changelog="$(git log --pretty=format:" - %s (%cd) _<%ae>_") --date=format:"%Y-%m-%d %H:%M:%S""
     fi
 else 
     echo "Fetching commits since last tag."
@@ -28,9 +28,9 @@ else
 
     # Get commit messages since previous tag
     if [ -n "${markdown_output}" -a "${markdown_output}" == "true" ]; then
-        changelog="$(git log --pretty=format:" - %s (%cd) _<%ce>_" --date=format:"%Y-%m-%d %H:%M:%S" $latest_tag...$previous_tag)"    
+        changelog="$(git log --pretty=format:" - %s (%cd) _<%ae>_" --date=format:"%Y-%m-%d %H:%M:%S" $latest_tag...$previous_tag)"    
     else
-        changelog="$(git log --pretty=format:"%s  (%cd) _<%ce>_" --date=format:"%Y-%m-%d %H:%M:%S" $latest_tag...$previous_tag)"    
+        changelog="$(git log --pretty=format:"%s  (%cd) _<%ae>_" --date=format:"%Y-%m-%d %H:%M:%S" $latest_tag...$previous_tag)"    
     fi
 fi
 
