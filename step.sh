@@ -30,7 +30,7 @@ else
     if [ -n "${markdown_output}" -a "${markdown_output}" == "true" ]; then
         changelog="$(git log --pretty=format:" - %s (%cd) _<%ae>_" --date=format:"%Y-%m-%d %H:%M:%S" $latest_tag...$previous_tag)"    
     else
-        changelog="$(git log --pretty=format:"%s  (%cd) _<%ae>_" --date=format:"%Y-%m-%d %H:%M:%S" $latest_tag...$previous_tag)"    
+        changelog="$(git log --pretty=format:" - %s (%cd) _<%ae>_" --date=format:"%Y-%m-%d %H:%M:%S" $latest_tag...$previous_tag)"    
     fi
 fi
 
