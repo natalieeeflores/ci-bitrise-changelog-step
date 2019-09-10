@@ -24,7 +24,7 @@ else
 
     # We have many tags, fetch since last one
     latest_tag=`git describe --tags`
-    previous_tag="$(git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1 --no-walk))"
+    previous_tag="$(git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1))"
 
     # Get commit messages since previous tag
     if [ -n "${markdown_output}" -a "${markdown_output}" == "true" ]; then
